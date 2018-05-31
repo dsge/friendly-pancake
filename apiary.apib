@@ -190,6 +190,21 @@ Amennyiben a felhasználónak még el kell fogadnia a terms and conditions-t (me
     + Attributes(User)
 
 
+## Static content [/static_content]
+
+### Terms and conditions [GET /static_content/terms]
+
++ Response 200 (application/json)
+
+    + Attribute(Static_terms)
+
+### Privacy policy [GET /static_content/privacy]
+
++ Response 200 (application/json)
+
+    + Attribute(Static_privacy)
+
+
 # Data Structures
 
 ## Pager
@@ -209,4 +224,14 @@ Amennyiben a felhasználónak még el kell fogadnia a terms and conditions-t (me
 + id: 7 (number, required)
 + email: `user@whc.hu` (string, optional)
 + request_notification: true (boolean, required)
+
+## `Static_terms`
++ title: `Terms and conditions` (required, string)
++ slug: `terms` (required, string)
++ content: `<p>Terms and conditions content</p>` (required, string) - HTML formatted string
+
+## `Static_privacy`
++ title: `Privacy policy` (required, string)
++ slug: `privacy` (required, string)
++ content: `<p>Privacy policy content</p>` (required, string) - HTML formatted string
 
