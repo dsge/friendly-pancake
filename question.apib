@@ -1,0 +1,35 @@
+## Question [/question]
+
+### List Questions [GET /question{?page}]
+
++ Parameters
+    + page (optional, number, `1`)
+
++ Response 200 (application/json)
+
+    + Attribute (QuestionPager)
+
+### Get a single question [GET /question/{id}]
+
++ Parameters
+    + id (required, number, `1`)
+
++ Response 200 (application/json)
+
+    + Attribute (QuestionDetailed)
+
++ Response 404 (application/json)
+
+### Answer a question [POST /question/{id}/answer]
+
++ Parameters
+    + id (required, number, `1`)
+
++ Request (application/json)
+
+    + Attributes
+        + answer (Answer)
+
++ Response 201 (application/json)
+
+    + Attribute (QuestionAnswered)

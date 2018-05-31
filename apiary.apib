@@ -228,16 +228,53 @@ Amennyiben a felhasználónak még el kell fogadnia a terms and conditions-t (me
 + Response 404 (application/json)
 
 
+## Question [/question]
+
+### List Questions [GET /question{?page}]
+
++ Parameters
+    + page (optional, number, `1`)
+
++ Response 200 (application/json)
+
+    + Attribute (QuestionPager)
+
+### Get a single question [GET /question/{id}]
+
++ Parameters
+    + id (required, number, `1`)
+
++ Response 200 (application/json)
+
+    + Attribute (QuestionDetailed)
+
++ Response 404 (application/json)
+
+### Answer a question [POST /question/{id}/answer]
+
++ Parameters
+    + id (required, number, `1`)
+
++ Request (application/json)
+
+    + Attributes
+        + answer (Answer)
+
++ Response 201 (application/json)
+
+    + Attribute (QuestionAnswered)
+
+
 # Data Structures
 
 ## Pager
 
 + total: 4 (number, required)
-+ per_page: 15 (number, required)
++ per_page: 10 (number, required)
 + current_page: 1 (number, required)
 + last_page: 1 (number, required)
 + from: 1 (number, required)
-+ to: 2 (number, required)
++ to: 4 (number, required)
 
 ## UserPager (object)
 + Include Pager
@@ -273,4 +310,34 @@ Amennyiben a felhasználónak még el kell fogadnia a terms and conditions-t (me
 + Include News
 + lead: `News lead` (optional, string)
 + content: `<p>News content</p>` (required, string) - HTML formatted string
+
+## QuestionPager
++ Include Pager
++ data: Question, Question (array[Question], required)
+
+## Question (object)
++ id: 1 (number, required)
++ text: `Favourite programming language?` (string, required)
++ image: `http://ichef.bbci.co.uk/news/976/cpsprodpb/7F89/production/_86594623_thinkstockphotos-473333164.jpg` (string, optional)
++ published_by: `WHC csapata` (string, required)
++ published_at: `2017-02-08 09:09:09` (string, required)
++ expired: false (boolean, required)
++ voted: false (boolean, required)
+
+## QuestionDetailed (object)
++ Include Question
++ answers: Answer, Answer, Answer, Answer (array[Answer], required)
+
+## Answer (object)
++ id: 1 (number, required)
++ text: `Swift` (string, required)
+
+## QuestionAnswered (object)
++ Include Question
++ answers: AnswerResult, AnswerResult, AnswerResult, AnswerResult (array[AnswerResult], required)
+
+## AnswerResult (object)
++ Include Answer
++ result: 12.5 (number, optional)
++ selected: true (boolean, optional)
 
