@@ -1,0 +1,21 @@
+## News [/news]
+
+### List News [GET /news?{page}]
+
++ Parameters
+    + page (optional, number, `1`)
+
++ Response 200 (application/json)
+
+    + Attribute (NewsPager)
+
+### Get a single News details [GET /news/{id}]
+
++ Parameters
+    + id (required, number, `1`)
+
++ Response 200 (application/json)
+
+    + Attribute (NewsDetailed)
+
++ Response 404 (application/json)
