@@ -169,6 +169,19 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 + Response 200 (application/json)
 
+## User rating [/user/{user_id}/rating]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+
+## Add rating [POST]
+
++ Request (application/json)
+
+    + Attribute(Rating)
+
++ Response 200 (application/json)
+
 
 ## Static content [/static_content]
 
@@ -299,6 +312,10 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 + Include BaseNotification
 + Include RatingNotification
 + Include CallbackNotification
+
+## Rating (object)
++ rating: 3 (number, required) - Egész szám 1-5-ig
++ comment: `Szöveges megjegyzés az értékeléshez` (string, optional)
 
 ## `Static_terms`
 + title: `Terms and conditions` (required, string)
