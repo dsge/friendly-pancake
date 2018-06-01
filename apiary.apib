@@ -136,6 +136,39 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
     + Attributes(User)
 
+## Notification [/user/{user_id}/notification]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+
+### Get new notification count [HEAD /user/{user_id}/notification]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Notification-Count: 3 (number, required)
+
+### List user's notifications [GET /user/{user_id}/notification?{page}]
+
++ Parameters
+    + page (optional, number) - Oldalszám
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute(NotificationPager)
+
+### Remove notification [DELETE /user/{user_id}/notification/{notification_id}]
+
++ Parameters
+    + notification_id (required, number) - Notification ID
+
++ Response 200 (application/json)
+
 
 ## Static content [/static_content]
 
@@ -229,8 +262,32 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 ## User (object)
 + id: 7 (number, required)
-+ email: `user@whc.hu` (string, optional)
++ email: `user@whc.hu` (string, required)
 + request_notification: true (boolean, required)
++ level: `beginner` (enum[string], required)
+    + Members
+        + beginner
+        + advanced
+        + master
++ points: 0 (number, required)
++ required_points_for_next_level: 10 (number, required)
+
+## NotificationPager (object)
++ Include Pager
++ data: Notification, Notification (array[Notification], required)
+
+## Notification (object)
++ id: 1 (number, required)
++ first_request: true (boolean, optional) - Először kérdezi le a szervertől a kliens ezt a Notification-t
++ type: `rating` (enum[string], required)
+    + Members
+        + rating
+        + call_back
++ target_name: `Felhasználó Neve` (string, required)
++ target_image_url: `https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg` (string, optional)
++ target_phone: `+36301234567` (string, optional) - Telefonszám nemzetközi formátumban
++ created_at: `2018-05-31 12:00:00` (string, required) - Létrehozási dátum
++ expiring_at: `2018-06-02 12:00:00` (string, optional) - Lejárati dátum
 
 ## `Static_terms`
 + title: `Terms and conditions` (required, string)

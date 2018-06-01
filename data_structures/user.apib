@@ -4,5 +4,12 @@
 
 ## User (object)
 + id: 7 (number, required)
-+ email: `user@whc.hu` (string, optional)
++ email: `user@whc.hu` (string, required)
 + request_notification: true (boolean, required)
++ level: `beginner` (enum[string], required)
+    + Members
+        + beginner
+        + advanced
+        + master
++ points: 0 (number, required)
++ required_points_for_next_level: 10 (number, required)

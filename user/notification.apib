@@ -1,0 +1,32 @@
+## Notification [/user/{user_id}/notification]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+
+### Get new notification count [HEAD /user/{user_id}/notification]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Notification-Count: 3 (number, required)
+
+### List user's notifications [GET /user/{user_id}/notification?{page}]
+
++ Parameters
+    + page (optional, number) - Oldalszám
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute(NotificationPager)
+
+### Remove notification [DELETE /user/{user_id}/notification/{notification_id}]
+
++ Parameters
+    + notification_id (required, number) - Notification ID
+
++ Response 200 (application/json)
