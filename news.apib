@@ -1,18 +1,32 @@
-## News [/news]
+## News [/role/{role_id}/news]
 
-### List News [GET /news?{page}]
+### List News [GET /role/{role_id}/news?{page}]
 
 + Parameters
+    + role_id (required, enum[string]) - User role
+        + Members
+            + accountant
+            + hr
+            + accountant_client
+            + hr_client
+            + business_partner
     + page (optional, number, `1`)
 
 + Response 200 (application/json)
 
     + Attribute (NewsPager)
 
-### Get a single News details [GET /news/{id}]
+### Get a single News details [GET /role/{role_id}/news/{news_id}]
 
 + Parameters
-    + id (required, number, `1`)
+    + role_id (required, enum[string]) - User role
+        + Members
+            + accountant
+            + hr
+            + accountant_client
+            + hr_client
+            + business_partner
+    + news_id (required, number, `1`)
 
 + Response 200 (application/json)
 

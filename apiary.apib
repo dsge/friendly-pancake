@@ -110,10 +110,10 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
                 "token": "auth token"
             }
 
-## User Details [/user/{id}]
+## User Details [/user/{user_id}]
 
 + Parameters
-    + id (required, number, `1`) - User ID or "me"
+    + user_id (required, number, `1`) - User ID or "me"
 
 ### User detail [GET]
 
@@ -141,7 +141,7 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 + Parameters
     + user_id (required, number, `1`) - User ID
 
-### Get new notification count [HEAD /user/{user_id}/notification]
+### Get new notification count [HEAD]
 
 + Request (application/json)
 
@@ -154,6 +154,7 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 ### List user's notifications [GET /user/{user_id}/notification?{page}]
 
 + Parameters
+    + user_id (required, number, `1`) - User ID
     + page (optional, number) - Oldalszám
 
 + Request (application/json)
@@ -165,6 +166,7 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 ### Remove notification [DELETE /user/{user_id}/notification/{notification_id}]
 
 + Parameters
+    + user_id (required, number, `1`) - User ID
     + notification_id (required, number) - Notification ID
 
 + Response 200 (application/json)
@@ -198,21 +200,35 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
     + Attribute(Static_privacy)
 
 
-## News [/news]
+## News [/role/{role_id}/news]
 
-### List News [GET /news?{page}]
+### List News [GET /role/{role_id}/news?{page}]
 
 + Parameters
+    + role_id (required, enum[string]) - User role
+        + Members
+            + accountant
+            + hr
+            + accountant_client
+            + hr_client
+            + business_partner
     + page (optional, number, `1`)
 
 + Response 200 (application/json)
 
     + Attribute (NewsPager)
 
-### Get a single News details [GET /news/{id}]
+### Get a single News details [GET /role/{role_id}/news/{news_id}]
 
 + Parameters
-    + id (required, number, `1`)
+    + role_id (required, enum[string]) - User role
+        + Members
+            + accountant
+            + hr
+            + accountant_client
+            + hr_client
+            + business_partner
+    + news_id (required, number, `1`)
 
 + Response 200 (application/json)
 
@@ -221,21 +237,35 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 + Response 404 (application/json)
 
 
-## Question [/question]
+## Question [/role/{role_id}/question]
 
-### List Questions [GET /question{?page}]
+### List Questions [GET /role/{role_id}/question{?page}]
 
 + Parameters
+    + role_id (required, enum[string]) - User role
+        + Members
+            + accountant
+            + hr
+            + accountant_client
+            + hr_client
+            + business_partner
     + page (optional, number, `1`)
 
 + Response 200 (application/json)
 
     + Attribute (QuestionPager)
 
-### Get a single question [GET /question/{id}]
+### Get a single question [GET /role/{role_id}/question/{question_id}]
 
 + Parameters
-    + id (required, number, `1`)
+    + role_id (required, enum[string]) - User role
+        + Members
+            + accountant
+            + hr
+            + accountant_client
+            + hr_client
+            + business_partner
+    + question_id (required, number, `1`)
 
 + Response 200 (application/json)
 
@@ -243,10 +273,17 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 + Response 404 (application/json)
 
-### Answer a question [POST /question/{id}/answer]
+### Answer a question [POST /role/{role_id}/question/{question_id}/answer]
 
 + Parameters
-    + id (required, number, `1`)
+    + role_id (required, enum[string]) - User role
+        + Members
+            + accountant
+            + hr
+            + accountant_client
+            + hr_client
+            + business_partner
+    + question_id (required, number, `1`)
 
 + Request (application/json)
 
@@ -353,7 +390,6 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 + image: `http://ichef.bbci.co.uk/news/976/cpsprodpb/7F89/production/_86594623_thinkstockphotos-473333164.jpg` (string, optional)
 + published_by: `WHC csapata` (string, required)
 + published_at: `2017-02-08 09:09:09` (string, required)
-+ expired: false (boolean, required)
 + voted: false (boolean, required)
 
 ## QuestionDetailed (object)
@@ -370,6 +406,5 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 ## AnswerResult (object)
 + Include Answer
-+ result: 12.5 (number, optional)
 + selected: true (boolean, optional)
 

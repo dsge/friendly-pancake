@@ -3,7 +3,7 @@
 + Parameters
     + user_id (required, number, `1`) - User ID
 
-### Get new notification count [HEAD /user/{user_id}/notification]
+### Get new notification count [HEAD]
 
 + Request (application/json)
 
@@ -16,6 +16,7 @@
 ### List user's notifications [GET /user/{user_id}/notification?{page}]
 
 + Parameters
+    + user_id (required, number, `1`) - User ID
     + page (optional, number) - Oldalszám
 
 + Request (application/json)
@@ -27,6 +28,7 @@
 ### Remove notification [DELETE /user/{user_id}/notification/{notification_id}]
 
 + Parameters
+    + user_id (required, number, `1`) - User ID
     + notification_id (required, number) - Notification ID
 
 + Response 200 (application/json)
