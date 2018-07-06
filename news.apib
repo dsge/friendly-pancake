@@ -63,6 +63,28 @@ Csak 'manager' jogosultsággal használható.
 
 + Response 200 (application/json)
 
+## News title image [/news/{news_id}/title_image]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + news_id (required, number, `1`) - News ID
+
+### Upload title image [POST]
+
++ Request (multipart/form-data; boundary=BOUNDARY)
+
+    + Body
+
+            --BOUNDARY
+            Content-Disposition: form-data; name='image'; filename='image.jpg'
+            Content-Type: image/jpeg
+
+            {file content}
+            --BOUNDARY--
+
++ Response 200 (application/json)
+
 ## News with role [/role/{role_id}/news]
 
 ### List News with role [GET /role/{role_id}/news?{page}]
