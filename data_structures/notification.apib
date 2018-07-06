@@ -1,26 +1,18 @@
 ## NotificationPager (object)
 + Include Pager
-+ data: Notification, Notification (array[Notification], required)
++ data: TargetNotification, TargetNotification (array[TargetNotification], required)
 
 ## BaseNotification (object)
 + id: 1 (number, required)
-+ first_request: true (boolean, optional) - Először kérdezi le a szervertől a kliens ezt a Notification-t
++ unseen: true (boolean, optional) - Először kérdezi le a szervertől a kliens ezt a Notification-t
 + type: `rating` (enum[string], required)
     + Members
         + rating
         + call_back
-+ target_name: `Felhasználó Neve` (string, required)
-+ target_image_url: `https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg` (string, optional)
 + created_at: `2018-05-31 12:00:00` (string, required) - Létrehozási dátum
 + expiring_at: `2018-06-02 12:00:00` (string, optional) - Lejárati dátum
 
-## RatingNotification (object)
-+ target_id: 2 (number, optional) - User ID
-
-## CallbackNotification (object)
-+ target_phone: `+36301234567` (string, optional) - Telefonszám nemzetközi formátumban
-
-## Notification (object)
+## TargetNotification (object)
 + Include BaseNotification
-+ Include RatingNotification
-+ Include CallbackNotification
++ target
+    Include BaseUser
