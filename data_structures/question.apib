@@ -1,25 +1,37 @@
 ## QuestionPager
 + Include Pager
-+ data: QuestionDetailed, QuestionDetailed (array[QuestionDetailed], required)
++ data: Question, Question (array[Question], required)
 
 ## Question (object)
 + id: 1 (number, required)
 + text: `Favourite programming language?` (string, required)
-+ image_url: `http://ichef.bbci.co.uk/news/976/cpsprodpb/7F89/production/_86594623_thinkstockphotos-473333164.jpg` (string, optional)
++ image_url (optional)
+    Include Image
 + published_by: `WHC csapata` (string, required)
 + published_at: `2017-02-08 09:09:09` (string, required)
-+ voted: false (boolean, required)
 
 ## QuestionDetailed (object)
 + Include Question
++ answers: Answer, Answer, Answer, Answer (array[Answer], required)
+
+## UserQuestionPager
++ Include Pager
++ data: UserQuestionDetailed, UserQuestionDetailed (array[UserQuestionDetailed], required)
+
+## UserQuestion (object)
++ Include Question
++ voted: false (boolean, required)
+
+## UserQuestionDetailed (object)
++ Include UserQuestion
 + answers: Answer, Answer, Answer, Answer (array[Answer], required)
 
 ## Answer (object)
 + id: 1 (number, required)
 + text: `Swift` (string, required)
 
-## QuestionAnswered (object)
-+ Include Question
+## UserQuestionAnswered (object)
++ Include UserQuestion
 + answers: AnswerResult, AnswerResult, AnswerResult, AnswerResult (array[AnswerResult], required)
 
 ## AnswerResult (object)
