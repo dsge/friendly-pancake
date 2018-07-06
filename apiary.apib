@@ -17,12 +17,13 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 ```
 {
-    "roles": [], //array of strings, másolat a belépett user entity `roles` mezőjéről
-    "sub": 2, //string/int user unique id
+    "uid": 2, //string/int user unique id
     "iss": "http://whc-vote-be.dev.clapp.eu/api/1.0/auth/login", //string token származási helye
     "iat": 1464959200, //int unix timestamp, token létrehozásának időpontja
     "exp": 1464962800, //int unix timestamp, token lejáratának időpontja
-    "nbf": 1464959200, //int unix timestamp, token érvényesség kezdetének időpontja
+    "data": {
+        "roles": [], //array of strings, másolat a belépett user entity `roles` mezőjéről
+    },
     "jti": "45ac5cd03267ce11158177ec61c1bbc5" //string token unique id
  }
 ```
@@ -85,7 +86,8 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 ### User list [GET]
 
-+ Response 404 (application/json)
+Csak 'manager' jogosultsággal használható.
+
 + Response 200 (application/json)
 
     + Attributes(UserPager)
@@ -102,7 +104,7 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
                 "terms_accepted": true (required, boolean)
             }
 
-+ Response 201
++ Response 201 (application/json)
 
     + Body
 
@@ -119,7 +121,7 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 + Response 200 (application/json)
 
-    + Attributes(User)
+    + Attributes(ExtendedUser)
 
 ### Edit user data [PUT]
 
@@ -134,7 +136,13 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 + Response 200 (application/json)
 
-    + Attributes(User)
+    + Attributes(ExtendedUser)
+
+### Delete user [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
 
 ## Notification [/user/{user_id}/notification]
 
@@ -149,7 +157,7 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
     + Headers
 
-            Notification-Count: 3 (number, required)
+            Notification-count: 3 (number, required)
 
 ### List user's notifications [GET /user/{user_id}/notification?{page}]
 
@@ -187,25 +195,167 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 ## Static content [/static_content]
 
-### Terms and conditions [GET /static_content/terms]
+### Static content list [GET]
+
+Csak 'manager' jogosultsággal használható.
 
 + Response 200 (application/json)
 
-    + Attribute(Static_terms)
+    + Attributes(StaticContentPager)
 
-### Privacy policy [GET /static_content/privacy]
+### Create static content [POST]
 
-+ Response 200 (application/json)
+Csak 'manager' jogosultsággal használható.
 
-    + Attribute(Static_privacy)
++ Request (application/json)
 
+    + Body
 
-## News [/role/{role_id}/news]
+            {
+                "slug": "terms" (required, string),
+                "title": "Terms and conditions" (required, string),
+                "content": "Terms and conditions content" (required, string)
+            }
 
-### List News [GET /role/{role_id}/news?{page}]
++ Response 201 (application/json)
+
+## Static content Details [/static_content/{slug}]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + slug (required, string, `terms`) - Static content slug
+
+### Static content detail [GET]
+
++ Response 200 (application/json)
+
+    + Attributes(StaticContent)
+
+### Edit static content [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "title": "New title" (optional, string),
+                "content": "New content" (optional, string)
+            }
+
++ Response 200 (application/json)
+
+### Delete static content [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+
+## Role  [/role]
+
+### Role list [GET]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+    + Attributes(array[Role])
+
+
+## News  [/news]
+
+### News list [GET]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+    + Attributes(NewsPager)
+
+### Create news [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "title": "News title" (required, string),
+                "content": "News content" (required, string),
+                "published_at": "2018-07-06 12:00:00" (required, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 201 (application/json)
+
+    + Attributes(News)
+
+## News Details [/news/{news_id}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + news_id (required, number, `1`) - News ID
+
+### News detail [GET]
+
++ Response 200 (application/json)
+
+    + Attributes(NewsDetailed)
+
+### Edit news data [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "title": "News title" (optional, string),
+                "content": "News content" (optional, string),
+                "published_at": "2018-07-06 12:00:00" (optional, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 200 (application/json)
+
+### Delete news [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+## News title image [/news/{news_id}/title_image]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + news_id (required, number, `1`) - News ID
+
+### Upload title image [POST]
+
++ Request (multipart/form-data; boundary=BOUNDARY)
+
+    + Body
+
+            --BOUNDARY
+            Content-Disposition: form-data; name='image'; filename='image.jpg'
+            Content-Type: image/jpeg
+
+            {file content}
+            --BOUNDARY--
+
++ Response 200 (application/json)
+
+## News with role [/role/{role_slug}/news]
+
+### List News with role [GET /role/{role_slug}/news?{page}]
+
++ Parameters
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -218,10 +368,10 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
     + Attribute (NewsPager)
 
-### Get a single News details [GET /role/{role_id}/news/{news_id}]
+### Get a single News details with role [GET /role/{role_slug}/news/{news_id}]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -237,12 +387,97 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 + Response 404 (application/json)
 
 
-## Question [/role/{role_id}/question]
+## Question  [/question]
 
-### List Questions [GET /role/{role_id}/question{?page}]
+### Question list [GET]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+    + Attributes(QuestionPager)
+
+### Create question [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Question text" (required, string),
+                "published_at": "2018-07-06 12:00:00" (required, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 201 (application/json)
+
+    + Attributes(Question)
+
+## Question Details [/question/{question_id}]
+
+Csak 'manager' jogosultsággal használható.
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + question_id (required, number, `1`) - Question ID
+
+### Question detail [GET]
+
++ Response 200 (application/json)
+
+    + Attributes(QuestionDetailed)
+
+### Edit question data [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Question text" (optional, string),
+                "published_at": "2018-07-06 12:00:00" (optional, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 200 (application/json)
+
+### Delete question [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+## Question title image [/question/{question_id}/title_image]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + question_id (required, number, `1`) - Question ID
+
+### Upload title image [POST]
+
++ Request (multipart/form-data; boundary=BOUNDARY)
+
+    + Body
+
+            --BOUNDARY
+            Content-Disposition: form-data; name='image'; filename='image.jpg'
+            Content-Type: image/jpeg
+
+            {file content}
+            --BOUNDARY--
+
++ Response 200 (application/json)
+
+## Question [/role/{role_slug}/question]
+
+### List Questions [GET /role/{role_slug}/question{?page}]
+
++ Parameters
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -253,12 +488,12 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 + Response 200 (application/json)
 
-    + Attribute (QuestionPager)
+    + Attribute (UserQuestionPager)
 
-### Get a single question [GET /role/{role_id}/question/{question_id}]
+### Get a single question [GET /role/{role_slug}/question/{question_id}]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -269,14 +504,65 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 + Response 200 (application/json)
 
-    + Attribute (QuestionDetailed)
+    + Attribute (UserQuestionDetailed)
 
 + Response 404 (application/json)
 
-### Answer a question [POST /role/{role_id}/question/{question_id}/answer]
+## Answer  [/question/{question_id}/answer]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + question_id (required, number, `1`) - Question ID
+
+### Create answer [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Answer text" (required, string),
+                "order": 1 (required, number) - Megjelenési sorrend
+            }
+
++ Response 201 (application/json)
+
+    + Attributes(Answer)
+
+## Answer Details [/question/{question_id}/answer/{answer_id}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + question_id (required, number, `1`) - Question ID
+    + answer_id (required, number, `1`) - Answer ID
+
+### Edit answer data [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Answer text" (optional, string),
+                "order": 1 (optional, number)
+            }
+
++ Response 200 (application/json)
+
+### Delete answer [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+### Answer a question [POST /role/{role_slug}/question/{question_id}/answer]
+
++ Parameters
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -292,12 +578,14 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 + Response 201 (application/json)
 
-    + Attribute (QuestionAnswered)
+    + Attribute (UserQuestionAnswered)
 
 
 ## Request callback [/callback]
 
 ## Request a callback [POST]
+
+Csak accountant_client és business_partner jogosultsággal használható
 
 + Request (application/json)
 
@@ -310,23 +598,42 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 + Response 200 (application/json)
 
 
+## Device [/device]
+
+## Add device [POST]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "provider": "apple", - apple vagy google
+                "device_token": "device_token_string"
+            }
+
++ Response 200 (application/json)
+
+
 # Data Structures
 
 ## Pager
 
 + total: 4 (number, required)
-+ per_page: 10 (number, required)
-+ current_page: 1 (number, required)
-+ last_page: 1 (number, required)
-+ from: 1 (number, required)
-+ to: 4 (number, required)
++ perPage: 10 (number, required)
++ page: 1 (number, required)
++ lastPage: 1 (number, required)
 
 ## UserPager (object)
 + Include Pager
-+ data: User, User (array[User], required)
++ data: ExtendedUser, ExtendedUser (array[ExtendedUser], required)
 
-## User (object)
+## BaseUser (object)
 + id: 7 (number, required)
++ name: `Lastname Firstname` (string, optional)
++ profile_pic_url: `https://whc.hu/profile/user7.jpg` (string, optional)
++ phone_number: `+3612345678` (string, optional) - Nemzetközi formátumban szóköz, kötöjel és zárójel nélkül
+
+## ExtendedUser (object)
 + email: `user@whc.hu` (string, required)
 + request_notification: true (boolean, required)
 + level: `beginner` (enum[string], required)
@@ -339,36 +646,32 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 ## NotificationPager (object)
 + Include Pager
-+ data: Notification, Notification (array[Notification], required)
++ data: TargetNotification, TargetNotification (array[TargetNotification], required)
 
 ## BaseNotification (object)
 + id: 1 (number, required)
-+ first_request: true (boolean, optional) - Először kérdezi le a szervertől a kliens ezt a Notification-t
++ unseen: true (boolean, optional) - Először kérdezi le a szervertől a kliens ezt a Notification-t
 + type: `rating` (enum[string], required)
     + Members
         + rating
         + call_back
-+ target_name: `Felhasználó Neve` (string, required)
-+ target_image_url: `https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg` (string, optional)
 + created_at: `2018-05-31 12:00:00` (string, required) - Létrehozási dátum
 + expiring_at: `2018-06-02 12:00:00` (string, optional) - Lejárati dátum
 
-## RatingNotification (object)
-+ target_id: 2 (number, optional) - User ID
-
-## CallbackNotification (object)
-+ target_phone: `+36301234567` (string, optional) - Telefonszám nemzetközi formátumban
-
-## Notification (object)
+## TargetNotification (object)
 + Include BaseNotification
-+ Include RatingNotification
-+ Include CallbackNotification
++ target
+    Include BaseUser
 
 ## Rating (object)
 + rating: 3 (number, required) - Egész szám 1-5-ig
 + comment: `Szöveges megjegyzés az értékeléshez` (string, optional)
 
-## `Static_terms`
+## StaticContentPager (object)
++ Include Pager
++ data: StaticContent, StaticContent (array[StaticContent], required)
+
+## StaticContent
 + title: `Terms and conditions` (required, string)
 + slug: `terms` (required, string)
 + content: `<p>Terms and conditions content</p>` (required, string) - HTML formatted string
@@ -378,14 +681,27 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 + slug: `privacy` (required, string)
 + content: `<p>Privacy policy content</p>` (required, string) - HTML formatted string
 
+## Image (object)
++ small: `http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg` (required, string)
++ medium: `http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg` (required, string)
++ large: `http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg` (required, string)
++ original: `http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg` (required, string)
+
+## Role (object)
++ id: 1 (number, required)
++ slug: `role_slug` (required, string)
++ name: `Role name` (required, string)
++ description: `Role description` (required, string)
+
 ## NewsPager
 + Include Pager
 + data: News, News (array[News], required)
 
 ## News (object)
-+ id: 1 (number)
++ id: 1 (number, required)
 + title: `News Title` (required, string)
-+ image_url: `http://ichef.bbci.co.uk/news/976/cpsprodpb/7F89/production/_86594623_thinkstockphotos-473333164.jpg` (optional, string)
++ image_url (optional)
+    Include Image
 + published_by: `WHC csapata` (required, string)
 + published_at: `2017-02-08 09:09:09` (required, string)
 
@@ -395,26 +711,38 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
 ## QuestionPager
 + Include Pager
-+ data: QuestionDetailed, QuestionDetailed (array[QuestionDetailed], required)
++ data: Question, Question (array[Question], required)
 
 ## Question (object)
 + id: 1 (number, required)
 + text: `Favourite programming language?` (string, required)
-+ image_url: `http://ichef.bbci.co.uk/news/976/cpsprodpb/7F89/production/_86594623_thinkstockphotos-473333164.jpg` (string, optional)
++ image_url (optional)
+    Include Image
 + published_by: `WHC csapata` (string, required)
 + published_at: `2017-02-08 09:09:09` (string, required)
-+ voted: false (boolean, required)
 
 ## QuestionDetailed (object)
 + Include Question
++ answers: Answer, Answer, Answer, Answer (array[Answer], required)
+
+## UserQuestionPager
++ Include Pager
++ data: UserQuestionDetailed, UserQuestionDetailed (array[UserQuestionDetailed], required)
+
+## UserQuestion (object)
++ Include Question
++ voted: false (boolean, required)
+
+## UserQuestionDetailed (object)
++ Include UserQuestion
 + answers: Answer, Answer, Answer, Answer (array[Answer], required)
 
 ## Answer (object)
 + id: 1 (number, required)
 + text: `Swift` (string, required)
 
-## QuestionAnswered (object)
-+ Include Question
+## UserQuestionAnswered (object)
++ Include UserQuestion
 + answers: AnswerResult, AnswerResult, AnswerResult, AnswerResult (array[AnswerResult], required)
 
 ## AnswerResult (object)
