@@ -1,6 +1,71 @@
-## News [/role/{role_id}/news]
+## News  [/news]
 
-### List News [GET /role/{role_id}/news?{page}]
+### News list [GET]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+    + Attributes(NewsPager)
+
+### Create news [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "title": "News title" (required, string),
+                "content": "News content" (required, string),
+                "published_at": "2018-07-06 12:00:00" (required, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 201 (application/json)
+
+    + Attributes(News)
+
+## News Details [/news/{news_id}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + news_id (required, number, `1`) - News ID
+
+### News detail [GET]
+
++ Response 200 (application/json)
+
+    + Attributes(NewsDetailed)
+
+### Edit news data [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "title": "News title" (optional, string),
+                "content": "News content" (optional, string),
+                "published_at": "2018-07-06 12:00:00" (optional, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 200 (application/json)
+
+### Delete news [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+## News with role [/role/{role_id}/news]
+
+### List News with role [GET /role/{role_id}/news?{page}]
 
 + Parameters
     + role_id (required, enum[string]) - User role
@@ -16,7 +81,7 @@
 
     + Attribute (NewsPager)
 
-### Get a single News details [GET /role/{role_id}/news/{news_id}]
+### Get a single News details with role [GET /role/{role_id}/news/{news_id}]
 
 + Parameters
     + role_id (required, enum[string]) - User role
