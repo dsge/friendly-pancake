@@ -85,12 +85,12 @@ Csak 'manager' jogosultsággal használható.
 
 + Response 200 (application/json)
 
-## News with role [/role/{role_id}/news]
+## News with role [/role/{role_slug}/news]
 
-### List News with role [GET /role/{role_id}/news?{page}]
+### List News with role [GET /role/{role_slug}/news?{page}]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -103,10 +103,10 @@ Csak 'manager' jogosultsággal használható.
 
     + Attribute (NewsPager)
 
-### Get a single News details with role [GET /role/{role_id}/news/{news_id}]
+### Get a single News details with role [GET /role/{role_slug}/news/{news_id}]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
