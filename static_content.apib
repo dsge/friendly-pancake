@@ -1,13 +1,57 @@
 ## Static content [/static_content]
 
-### Terms and conditions [GET /static_content/terms]
+### Static content list [GET]
+
+Csak 'manager' jogosultsággal használható.
 
 + Response 200 (application/json)
 
-    + Attribute(Static_terms)
+    + Attributes(StaticContentPager)
 
-### Privacy policy [GET /static_content/privacy]
+### Create static content [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "slug": "terms" (required, string),
+                "title": "Terms and conditions" (required, string),
+                "content": "Terms and conditions content" (required, string)
+            }
+
++ Response 201 (application/json)
+
+## Static content Details [/static_content/{slug}]
+
++ Parameters
+    + slug (required, string, `terms`) - Static content slug
+
+### Static content detail [GET]
 
 + Response 200 (application/json)
 
-    + Attribute(Static_privacy)
+    + Attributes(StaticContent)
+
+### Edit static content [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "title": "New title" (optional, string),
+                "content": "New content" (optional, string)
+            }
+
++ Response 200 (application/json)
+
+### Delete static content [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
