@@ -1,9 +1,94 @@
-## Question [/role/{role_id}/question]
+## Question  [/question]
 
-### List Questions [GET /role/{role_id}/question{?page}]
+### Question list [GET]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+    + Attributes(QuestionPager)
+
+### Create question [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Question text" (required, string),
+                "published_at": "2018-07-06 12:00:00" (required, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 201 (application/json)
+
+    + Attributes(Question)
+
+## Question Details [/question/{question_id}]
+
+Csak 'manager' jogosultsággal használható.
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + question_id (required, number, `1`) - Question ID
+
+### Question detail [GET]
+
++ Response 200 (application/json)
+
+    + Attributes(QuestionDetailed)
+
+### Edit question data [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Question text" (optional, string),
+                "published_at": "2018-07-06 12:00:00" (optional, string),
+                "roles": [Role, Role] (optional, Array[Role])
+            }
+
++ Response 200 (application/json)
+
+### Delete question [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+## Question title image [/question/{question_id}/title_image]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + question_id (required, number, `1`) - Question ID
+
+### Upload title image [POST]
+
++ Request (multipart/form-data; boundary=BOUNDARY)
+
+    + Body
+
+            --BOUNDARY
+            Content-Disposition: form-data; name='image'; filename='image.jpg'
+            Content-Type: image/jpeg
+
+            {file content}
+            --BOUNDARY--
+
++ Response 200 (application/json)
+
+## Question [/role/{role_slug}/question]
+
+### List Questions [GET /role/{role_slug}/question{?page}]
+
++ Parameters
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -14,12 +99,12 @@
 
 + Response 200 (application/json)
 
-    + Attribute (QuestionPager)
+    + Attribute (UserQuestionPager)
 
-### Get a single question [GET /role/{role_id}/question/{question_id}]
+### Get a single question [GET /role/{role_slug}/question/{question_id}]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -30,6 +115,6 @@
 
 + Response 200 (application/json)
 
-    + Attribute (QuestionDetailed)
+    + Attribute (UserQuestionDetailed)
 
 + Response 404 (application/json)

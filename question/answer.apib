@@ -1,7 +1,58 @@
-### Answer a question [POST /role/{role_id}/question/{question_id}/answer]
+## Answer  [/question/{question_id}/answer]
 
 + Parameters
-    + role_id (required, enum[string]) - User role
+    + question_id (required, number, `1`) - Question ID
+
+### Create answer [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Answer text" (required, string),
+                "order": 1 (required, number) - Megjelenési sorrend
+            }
+
++ Response 201 (application/json)
+
+    + Attributes(Answer)
+
+## Answer Details [/question/{question_id}/answer/{answer_id}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + question_id (required, number, `1`) - Question ID
+    + answer_id (required, number, `1`) - Answer ID
+
+### Edit answer data [PUT]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "text": "Answer text" (optional, string),
+                "order": 1 (optional, number)
+            }
+
++ Response 200 (application/json)
+
+### Delete answer [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+### Answer a question [POST /role/{role_slug}/question/{question_id}/answer]
+
++ Parameters
+    + role_slug (required, enum[string]) - User role
         + Members
             + accountant
             + hr
@@ -17,4 +68,4 @@
 
 + Response 201 (application/json)
 
-    + Attribute (QuestionAnswered)
+    + Attribute (UserQuestionAnswered)
