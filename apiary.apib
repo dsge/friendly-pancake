@@ -661,7 +661,7 @@ Csak accountant_client és business_partner jogosultsággal használható
 ## TargetNotification (object)
 + Include BaseNotification
 + target
-    Include BaseUser
+    + Include BaseUser
 
 ## Rating (object)
 + rating: 3 (number, required) - Egész szám 1-5-ig
@@ -701,7 +701,7 @@ Csak accountant_client és business_partner jogosultsággal használható
 + id: 1 (number, required)
 + title: `News Title` (required, string)
 + image_url (optional)
-    Include Image
+    + Include Image
 + published_by: `WHC csapata` (required, string)
 + published_at: `2017-02-08 09:09:09` (required, string)
 
@@ -717,7 +717,7 @@ Csak accountant_client és business_partner jogosultsággal használható
 + id: 1 (number, required)
 + text: `Favourite programming language?` (string, required)
 + image_url (optional)
-    Include Image
+    + Include Image
 + published_by: `WHC csapata` (string, required)
 + published_at: `2017-02-08 09:09:09` (string, required)
 

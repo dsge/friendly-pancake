@@ -191,7 +191,12 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"rating"</span></span>,
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2018-05-31 12:00:00"</span></span>,
       "<span class="hljs-attribute">expiring_at</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-02 12:00:00"</span></span>,
-      "<span class="hljs-attribute">target</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span>
+      "<span class="hljs-attribute">target</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">7</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Lastname Firstname"</span></span>,
+        "<span class="hljs-attribute">profile_pic_url</span>": <span class="hljs-value"><span class="hljs-string">"https://whc.hu/profile/user7.jpg"</span></span>,
+        "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+3612345678"</span>
+      </span>}
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -199,7 +204,12 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"rating"</span></span>,
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2018-05-31 12:00:00"</span></span>,
       "<span class="hljs-attribute">expiring_at</span>": <span class="hljs-value"><span class="hljs-string">"2018-06-02 12:00:00"</span></span>,
-      "<span class="hljs-attribute">target</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span>
+      "<span class="hljs-attribute">target</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">7</span></span>,
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Lastname Firstname"</span></span>,
+        "<span class="hljs-attribute">profile_pic_url</span>": <span class="hljs-value"><span class="hljs-string">"https://whc.hu/profile/user7.jpg"</span></span>,
+        "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+3612345678"</span>
+      </span>}
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -347,14 +357,24 @@
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"News Title"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"News Title"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
     </span>}
@@ -395,7 +415,12 @@
 }</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
   "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"News Title"</span></span>,
-  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+  </span>}</span>,
   "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
   "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -409,8 +434,27 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}</span>,
     "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Include Image"</span>
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"small"</span>,
+        <span class="hljs-string">"medium"</span>,
+        <span class="hljs-string">"large"</span>,
+        <span class="hljs-string">"original"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">published_by</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -429,7 +473,12 @@
 <div id="news-details-get" class="action get"><h4 class="action-heading"><div class="name">News detail</div><a href="#news-details-get" class="method get">GET</a><code class="uri">/news/{news_id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://whc-vote-be.dev.clapp.eu/api/1.0</span>/news/<span class="hljs-attribute" title="news_id">1</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>news_id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span></dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
   "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"News Title"</span></span>,
-  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+  </span>}</span>,
   "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
   "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span></span>,
   "<span class="hljs-attribute">content</span>": <span class="hljs-value"><span class="hljs-string">"&lt;p&gt;News content&lt;/p&gt;"</span>
@@ -444,8 +493,27 @@
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}</span>,
     "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Include Image"</span>
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"small"</span>,
+        <span class="hljs-string">"medium"</span>,
+        <span class="hljs-string">"large"</span>,
+        <span class="hljs-string">"original"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">published_by</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -488,14 +556,24 @@ Content-Type: image/jpeg
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"News Title"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"News Title"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
     </span>}
@@ -531,7 +609,12 @@ Content-Type: image/jpeg
 <p class="choices"><strong>Choices:&nbsp;</strong><code>accountant</code> <code>hr</code> <code>accountant_client</code> <code>hr_client</code> <code>business_partner</code> </p></dd><dt>news_id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span></dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
   "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"News Title"</span></span>,
-  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+  </span>}</span>,
   "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
   "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span></span>,
   "<span class="hljs-attribute">content</span>": <span class="hljs-value"><span class="hljs-string">"&lt;p&gt;News content&lt;/p&gt;"</span>
@@ -546,8 +629,27 @@ Content-Type: image/jpeg
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}</span>,
     "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Include Image"</span>
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"small"</span>,
+        <span class="hljs-string">"medium"</span>,
+        <span class="hljs-string">"large"</span>,
+        <span class="hljs-string">"original"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">published_by</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -577,14 +679,24 @@ Content-Type: image/jpeg
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
     </span>}
@@ -624,7 +736,12 @@ Content-Type: image/jpeg
 }</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
   "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+  </span>}</span>,
   "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
   "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -638,8 +755,27 @@ Content-Type: image/jpeg
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}</span>,
     "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Include Image"</span>
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"small"</span>,
+        <span class="hljs-string">"medium"</span>,
+        <span class="hljs-string">"large"</span>,
+        <span class="hljs-string">"original"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">published_by</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -658,7 +794,12 @@ Content-Type: image/jpeg
 <div id="question-details-get" class="action get"><h4 class="action-heading"><div class="name">Question detail</div><a href="#question-details-get" class="method get">GET</a><code class="uri">/question/{question_id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://whc-vote-be.dev.clapp.eu/api/1.0</span>/question/<span class="hljs-attribute" title="question_id">1</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>question_id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span></dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
   "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+  </span>}</span>,
   "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
   "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span></span>,
   "<span class="hljs-attribute">answers</span>": <span class="hljs-value">[
@@ -690,8 +831,27 @@ Content-Type: image/jpeg
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}</span>,
     "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Include Image"</span>
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"small"</span>,
+        <span class="hljs-string">"medium"</span>,
+        <span class="hljs-string">"large"</span>,
+        <span class="hljs-string">"original"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">published_by</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -732,7 +892,12 @@ Content-Type: image/jpeg
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span></span>,
       "<span class="hljs-attribute">voted</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
@@ -758,7 +923,12 @@ Content-Type: image/jpeg
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+      </span>}</span>,
       "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
       "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span></span>,
       "<span class="hljs-attribute">voted</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
@@ -813,7 +983,12 @@ Content-Type: image/jpeg
 <p class="choices"><strong>Choices:&nbsp;</strong><code>accountant</code> <code>hr</code> <code>accountant_client</code> <code>hr_client</code> <code>business_partner</code> </p></dd><dt>question_id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span></dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
   "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+  </span>}</span>,
   "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
   "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span></span>,
   "<span class="hljs-attribute">voted</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
@@ -846,8 +1021,27 @@ Content-Type: image/jpeg
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}</span>,
     "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Include Image"</span>
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"small"</span>,
+        <span class="hljs-string">"medium"</span>,
+        <span class="hljs-string">"large"</span>,
+        <span class="hljs-string">"original"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">published_by</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -927,7 +1121,12 @@ Content-Type: image/jpeg
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
   "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"Favourite programming language?"</span></span>,
-  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">small</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/small/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">medium</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/medium/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">large</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/large/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span></span>,
+    "<span class="hljs-attribute">original</span>": <span class="hljs-value"><span class="hljs-string">"http://127.0.0.1:3333/image/original/news/6l/ed/6led9krl0qg5z8m33vdddd598mp6w2x4v31n7o7q.jpg"</span>
+  </span>}</span>,
   "<span class="hljs-attribute">published_by</span>": <span class="hljs-value"><span class="hljs-string">"WHC csapata"</span></span>,
   "<span class="hljs-attribute">published_at</span>": <span class="hljs-value"><span class="hljs-string">"2017-02-08 09:09:09"</span></span>,
   "<span class="hljs-attribute">voted</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
@@ -964,8 +1163,27 @@ Content-Type: image/jpeg
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}</span>,
     "<span class="hljs-attribute">image_url</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Include Image"</span>
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">small</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">medium</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">large</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">original</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"small"</span>,
+        <span class="hljs-string">"medium"</span>,
+        <span class="hljs-string">"large"</span>,
+        <span class="hljs-string">"original"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">published_by</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -996,7 +1214,7 @@ Content-Type: image/jpeg
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div></div></div><div id="device" class="resource"><h3 class="resource-heading">Device <a href="#device" class="permalink">&nbsp;&para;</a></h3><div id="device-post" class="action post"><h4 class="action-heading"><div class="name">Add device</div><a href="#device-post" class="method post">POST</a><code class="uri">/device</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">http://whc-vote-be.dev.clapp.eu/api/1.0</span>/device</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
     <span class="hljs-string">"provider"</span>: <span class="hljs-string">"apple"</span>, - apple vagy google
     <span class="hljs-string">"device_token"</span>: <span class="hljs-string">"device_token_string"</span>
-}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 06 Jul 2018</p><script>/* eslint-env browser */
+}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 31 Jul 2018</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
