@@ -132,7 +132,9 @@ Csak 'manager' jogosultsággal használható.
 
             {
                 "password": "newpasword" (optional, string),
-                "request_notification": true (optional, boolean)
+                "request_notification": true (optional, boolean),
+                "request_news_notification": true (optional, boolean),
+                "request_level_notification": true (optional, boolean)
             }
 
 + Response 200 (application/json)
@@ -688,6 +690,8 @@ Csak accountant_client és business_partner jogosultsággal használható
 ## ExtendedUser (object)
 + email: `user@whc.hu` (string, required)
 + request_notification: true (boolean, required)
++ request_news_notification: true (boolean, optional)
++ request_level_notification: true (boolean, optional)
 + level: `beginner` (enum[string], required)
     + Members
         + beginner
