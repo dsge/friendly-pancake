@@ -1,0 +1,29 @@
+## Rating Period [/user/{user_id}/rating_period]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+
+### List user's rating periods [GET /user/{user_id}/rating_period?{page,not_rated}]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+    + page (optional, number) - Oldalszám
+    + not_rated (optional, boolean, `true`)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute(RatingPeriodPager)
+
+### Get a rating period [GET /user/{user_id}/rating_period/{rating_period_id}]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+    + rating_period_id (required, number, `1`) - Rating Period ID
+
++ Response 200 (application/json)
+
+    + Attribute (RatingPeriod)
+
++ Response 404 (application/json)

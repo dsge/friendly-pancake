@@ -1,0 +1,18 @@
+## Rating Target [/user/{user_id}/rating_period/{rating_period_id}/rating_target]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+    + rating_period_id (required, number, `1`) - Rating Period ID
+
+### List rating targets [GET /user/{user_id}/rating_period/{rating_period_id}/rating_target?{not_rated}]
+
++ Parameters
+    + user_id (required, number, `1`) - User ID
+    + rating_period_id (required, number, `1`) - Rating Period ID
+    + not_rated (optional, boolean, `true`)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attributes(array[BaseUser])
