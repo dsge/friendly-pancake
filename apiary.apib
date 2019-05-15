@@ -82,6 +82,26 @@ Ez az endpoint sikeres bejelentkezés esetén egy JWT tokent ( https://jwt.io ) 
 
         + token: `valid token` (string)
 
+### Login with MS account [POST /auth/ms]
+
+Belépés Microsoft fiókkal - CSAK WHC dolgozók részére!
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "accesstoken": "microsoft access token"
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "token": "auth token"
+            }
+
 
 ## User  [/user]
 
