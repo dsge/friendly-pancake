@@ -202,7 +202,7 @@ Csak 'manager' jogosultsággal használható.
 
 + Response 200 (application/json)
 
-## Rating Period [/user/{user_id}/rating_period]
+## User's Rating Period [/user/{user_id}/rating_period]
 
 + Parameters
     + user_id (required, number, `1`) - User ID
@@ -220,7 +220,7 @@ Csak 'manager' jogosultsággal használható.
 
     + Attribute(RatingPeriodPager)
 
-### Get a rating period [GET /user/{user_id}/rating_period/{rating_period_id}]
+### Get a user's rating period [GET /user/{user_id}/rating_period/{rating_period_id}]
 
 + Parameters
     + user_id (required, number, `1`) - User ID
@@ -320,6 +320,58 @@ Csak 'manager' jogosultsággal használható.
 + Response 200 (application/json)
 
 ### Delete static content [DELETE]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+
+## Rating Period [/rating_period]
+
+### List rating periods [GET /rating_period?{page}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + page (optional, number) - Oldalszám
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Attribute(RatingPeriodPager)
+
+### Create rating period [POST]
+
+Csak 'manager' jogosultsággal használható.
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "from": "2019-06-01 00:00:00" (required, string),
+                "to": "2019-06-30 23:59:59" (required, string)
+            }
+
++ Response 201 (application/json)
+
+    + Attribute (RatingPeriod)
+
+### Get a rating period [GET /rating_period/{rating_period_id}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + rating_period_id (required, number, `1`) - Rating Period ID
+
++ Response 200 (application/json)
+
+    + Attribute (RatingPeriod)
+
++ Response 404 (application/json)
+
+### Delete rating period [DELETE]
 
 Csak 'manager' jogosultsággal használható.
 
