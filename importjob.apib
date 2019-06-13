@@ -1,0 +1,20 @@
+## Import job  [/importjob]
+
+### Import job list [GET]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+    + Attributes(ImportJobPager)
+
+### Import job detail [GET /importjob/{importjob_id}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + importjob_id (required, number, `1`) - Import job ID
+
++ Response 200 (application/json)
+
+    + Attributes(ImportJob)

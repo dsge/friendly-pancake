@@ -167,6 +167,25 @@ Csak 'manager' jogosultsággal használható.
 
 + Response 200 (application/json)
 
+## Import [/user/import]
+
+### Import users [POST]
+
++ Request (multipart/form-data; boundary=BOUNDARY)
+
+    + Body
+
+            --BOUNDARY
+            Content-Disposition: form-data; name='sheet'; filename='users.xlsx'
+            Content-Type: multipart/form-data
+
+            {file content}
+            --BOUNDARY--
+
++ Response 204 (application/json)
+
+    + Attributes(ImportJob)
+
 ## Notification [/user/{user_id}/notification]
 
 + Parameters
@@ -740,6 +759,28 @@ Csak accountant_client és business_partner jogosultsággal használható
 + Response 200 (application/json)
 
 
+## Import job  [/importjob]
+
+### Import job list [GET]
+
+Csak 'manager' jogosultsággal használható.
+
++ Response 200 (application/json)
+
+    + Attributes(ImportJobPager)
+
+### Import job detail [GET /importjob/{importjob_id}]
+
+Csak 'manager' jogosultsággal használható.
+
++ Parameters
+    + importjob_id (required, number, `1`) - Import job ID
+
++ Response 200 (application/json)
+
+    + Attributes(ImportJob)
+
+
 # Data Structures
 
 ## Pager
@@ -760,17 +801,14 @@ Csak accountant_client és business_partner jogosultsággal használható
 + phone_number: `+3612345678` (string, optional) - Nemzetközi formátumban szóköz, kötöjel és zárójel nélkül
 
 ## ExtendedUser (object)
++ Include BaseUser
 + email: `user@whc.hu` (string, required)
 + request_notification: true (boolean, required)
 + request_news_notification: true (boolean, optional)
 + request_level_notification: true (boolean, optional)
-+ level: `beginner` (enum[string], required)
-    + Members
-        + beginner
-        + advanced
-        + master
++ level: 0 (number, required)
 + points: 0 (number, required)
-+ required_points_for_next_level: 10 (number, required)
++ required_points_for_next_level: 1000 (number, required)
 
 ## NotificationPager (object)
 + Include Pager
@@ -886,4 +924,19 @@ Csak accountant_client és business_partner jogosultsággal használható
 + id: 1 (number, required)
 + from: `2019-04-05 06:00:00` (string, required)
 + to: `2019-05-05 05:59:59` (string, required)
+
+## ImportJobPager (object)
++ Include Pager
++ data: ImportJob, ImportJob (array[ImportJob], required)
+
+## ImportJob (object)
++ id: 1 (number, required)
++ whc_progress: 0.0 (number, required)
++ bp_progress: 0.0 (number, required)
++ user_progress: 0.0 (number, required)
++ target_progress: 0.0 (number, required)
++ overall_progress: 0.0 (number, required)
++ finished: false (boolean, required)
++ message: null (required)  // JSON
++ error: null (required)    // JSON
 

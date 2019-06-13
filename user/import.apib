@@ -1,0 +1,18 @@
+## Import [/user/import]
+
+### Import users [POST]
+
++ Request (multipart/form-data; boundary=BOUNDARY)
+
+    + Body
+
+            --BOUNDARY
+            Content-Disposition: form-data; name='sheet'; filename='users.xlsx'
+            Content-Type: multipart/form-data
+
+            {file content}
+            --BOUNDARY--
+
++ Response 204 (application/json)
+
+    + Attributes(ImportJob)
