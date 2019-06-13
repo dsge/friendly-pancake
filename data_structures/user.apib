@@ -9,14 +9,11 @@
 + phone_number: `+3612345678` (string, optional) - Nemzetközi formátumban szóköz, kötöjel és zárójel nélkül
 
 ## ExtendedUser (object)
++ Include BaseUser
 + email: `user@whc.hu` (string, required)
 + request_notification: true (boolean, required)
 + request_news_notification: true (boolean, optional)
 + request_level_notification: true (boolean, optional)
-+ level: `beginner` (enum[string], required)
-    + Members
-        + beginner
-        + advanced
-        + master
++ level: 0 (number, required)
 + points: 0 (number, required)
-+ required_points_for_next_level: 10 (number, required)
++ required_points_for_next_level: 1000 (number, required)
