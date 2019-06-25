@@ -370,7 +370,8 @@ Csak 'manager' jogosultsággal használható.
 
             {
                 "from": "2019-06-01 00:00:00" (required, string),
-                "to": "2019-06-30 23:59:59" (required, string)
+                "to": "2019-06-30 23:59:59" (required, string),
+                "label": "Juniusi ertekeles" (required, string)
             }
 
 + Response 201 (application/json)
@@ -924,6 +925,7 @@ Csak 'manager' jogosultsággal használható.
 + id: 1 (number, required)
 + from: `2019-04-05 06:00:00` (string, required)
 + to: `2019-05-05 05:59:59` (string, required)
++ label: `Aprilisi ertekeles` (string, required)
 
 ## ImportJobPager (object)
 + Include Pager
